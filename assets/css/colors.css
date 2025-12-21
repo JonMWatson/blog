@@ -1,0 +1,122 @@
+/* Colors
+ * -------------------------------------------------------------------------- */
+
+:root {
+  /* Core Colors
+   * These variables are only for use in _this_ stylesheet
+   * If you add a new rgb like "--rgb-pink", you'll want to add a
+   * corresponding dark-mode version to the media query just below
+   * ------------------------------------------------------------------------ */
+
+  --rgb-black: 0, 0, 0;
+  --rgb-white: 255, 255, 255;
+  --rgb-almost-black: 35, 28, 51; /* Really dark purple */
+  --rgb-almost-white: 236, 233, 230; /* Creamy white */
+
+  --rgb-mint: 157, 255, 236;
+  --rgb-red: 201, 36, 0;
+  --rgb-orange: 248, 121, 23;
+  --rgb-gold: 166, 119, 0;
+  --rgb-yellow: 255, 214, 10;
+  --rgb-green: 41, 152, 80;
+  --rgb-teal: 19, 142, 158;
+  --rgb-blue: 0, 116, 228;
+  --rgb-purple: 85, 34, 250;
+  --rgb-pink: 179, 25, 99;
+  --rgb-brown: 119, 109, 99;
+
+  --rgb-gray: 116, 116, 128;
+  --rgb-medium-gray: 226, 221, 215;
+  --rgb-light-gray: 251, 250, 249;
+  --rgb-neutral-light-gray: 244, 243, 245;
+  --rgb-always-blue: 0, 116, 228;
+  --rgb-canary: 255, 245, 202;
+  --rgb-yellow-gradient-middle: 255, 245, 205;
+  --rgb-peach: 255, 229, 218;
+  --rgb-coral: 249, 92, 92;
+  --rgb-light-green: 22, 186, 91;
+  --rgb-nighttime: 49, 51, 87;
+  --rgb-background: var(--rgb-white);
+  --rgb-ink: var(--rgb-almost-black);
+  --rgb-overlay: var(--rgb-white);
+
+  &[data-color-scheme="dark"] {
+    --rgb-almost-black: 27, 39, 51;
+
+    --rgb-red: 255, 120, 120;
+    --rgb-orange: 255, 184, 92;
+    --rgb-gold: 249, 213, 122;
+    --rgb-yellow: 251, 225, 144;
+    --rgb-green: 105, 240, 174;
+    --rgb-teal: 157, 255, 236; /* Teal = Mint in dark mode */
+    --rgb-blue: 80, 162, 255;
+    --rgb-purple: 134, 126, 255;
+    --rgb-pink: 242, 136, 187;
+    --rgb-brown: 185, 165, 151;
+
+    --rgb-gray: 116, 116, 128;
+    --rgb-medium-gray: 51, 60, 71;
+    --rgb-light-gray: 39, 50, 62;
+    --rgb-neutral-light-gray: 39, 50, 62;
+    --rgb-yellow-gradient-middle: 225, 203, 133;
+    --rgb-peach: 83, 62, 25;
+    --rgb-coral: 222, 137, 131;
+    --rgb-light-green: 115, 240, 105;
+    --rgb-background: var(--rgb-almost-black);
+    --rgb-ink: var(--rgb-almost-white);
+    --rgb-overlay: 32, 44, 56; /* Lightened-up almost-black */
+  }
+
+  /* Dark mode detection via CSS media queries */
+  @media (prefers-color-scheme: dark) {
+    &:not([data-color-scheme="light"]) {
+      --rgb-almost-black: 27, 39, 51;
+
+      --rgb-red: 255, 120, 120;
+      --rgb-orange: 255, 184, 92;
+      --rgb-gold: 249, 213, 122;
+      --rgb-yellow: 251, 225, 144;
+      --rgb-green: 105, 240, 174;
+      --rgb-teal: 157, 255, 236; /* Teal = Mint in dark mode */
+      --rgb-blue: 80, 162, 255;
+      --rgb-purple: 134, 126, 255;
+      --rgb-pink: 242, 136, 187;
+      --rgb-brown: 185, 165, 151;
+
+      --rgb-gray: 116, 116, 128;
+      --rgb-medium-gray: 51, 60, 71;
+      --rgb-light-gray: 39, 50, 62;
+      --rgb-neutral-light-gray: 39, 50, 62;
+      --rgb-yellow-gradient-middle: 225, 203, 133;
+      --rgb-peach: 83, 62, 25;
+      --rgb-coral: 222, 137, 131;
+      --rgb-light-green: 115, 240, 105;
+      --rgb-background: var(--rgb-almost-black);
+      --rgb-ink: var(--rgb-almost-white);
+      --rgb-overlay: 32, 44, 56; /* Lightened-up almost-black */
+    }
+  }
+
+  /* These variables are for use in _other_ stylesheets */
+  --color-bg--main: rgb(var(--rgb-background));
+  --color-bg--surface: rgb(var(--rgb-overlay));
+  --color-bg--surface-glint: rgba(var(--rgb-ink), 0.04);
+  --color-bg--surface-glint-opaque: rgb(var(--rgb-light-gray));
+
+  --color-txt: rgb(var(--rgb-ink));
+  --color-txt--reversed: rgb(var(--rgb-background));
+  --color-txt--action: rgb(var(--rgb-blue));
+  --color-txt--subtle: rgba(var(--rgb-ink), 0.6);
+
+  --color-border: rgba(var(--rgb-ink), 0.1);
+  --color-border--light: rgba(var(--rgb-ink), 0.06);
+  --color-shadow: rgba(var(--rgb-black), 0.1);
+
+  /* Brand colors */
+  --color-red: rgb(var(--rgb-red));
+  --color-orange: rgb(var(--rgb-orange));
+  --color-yellow: rgb(var(--rgb-yellow));
+  --color-green: rgb(var(--rgb-green));
+  --color-blue: rgb(var(--rgb-blue));
+  --color-purple: rgb(var(--rgb-purple));
+}

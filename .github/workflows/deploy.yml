@@ -1,0 +1,97 @@
+name: Build and Deploy Blog
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Validate Markdown files
+      run: |
+        echo "📝 Validating Markdown posts..."
+        for file in _posts/*.md; do
+          if [ -f "$file" ]; then
+            echo "✅ Checking $file"
+            # Basic frontmatter validation
+            if ! head -1 "$file" | grep -q "^---$"; then
+              echo "❌ $file missing frontmatter"
+              exit 1
+            fi
+          fi
+        done
+        echo "✅ All Markdown files valid"
+        
+    - name: Test blog build
+      run: |
+        echo "🔨 Testing blog build..."
+        node build.js
+        echo "✅ Blog builds successfully"
+        
+    - name: Validate HTML structure
+      run: |
+        echo "🔍 Validating HTML structure..."
+        if [ ! -f "index.html" ]; then
+          echo "❌ index.html not found"
+          exit 1
+        fi
+        if [ ! -d "posts" ]; then
+          echo "❌ posts directory not generated"
+          exit 1
+        fi
+        echo "✅ HTML structure valid"
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: validate
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Build blog from Markdown
+      run: |
+        node build.js
+        echo "✅ Blog built successfully"
+        
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
