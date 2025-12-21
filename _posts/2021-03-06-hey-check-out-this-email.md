@@ -5,8 +5,6 @@ author: Matt Watson
 excerpt: "HEY for You is a great product offering many features that blow other email services out of the water."
 ---
 
-# HEY! Check out this email.
-
 HEY for You is a great product offering many features that blow other email services out of the water. (i.e. The Screener, The Feed, and others) But when Basecamp released HEY for Work they introduced several new features exclusive to the Work version. Among them includes: better collaboration features, custom domain support, email extensions, and many other features.
 
 ## What Makes HEY for Work Special?

@@ -5,8 +5,6 @@ author: Matt Watson
 excerpt: "The ability to change the title of an email you were sent was groundbreaking for me."
 ---
 
-# No Subject
-
 The ability to change the title of an email you were sent was groundbreaking for me. I never had heard of an email service that allowed you to do that. I don't think there is one.
 
 ## A Simple Innovation with Profound Impact
