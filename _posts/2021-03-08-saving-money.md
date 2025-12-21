@@ -5,8 +5,6 @@ author: Matt Watson
 excerpt: "When you get your paycheck are you excited? Are you eager to spend your money on crap that you don't need? If so, your like me."
 ---
 
-# Saving Money
-
 When you get your paycheck are you excited? Are you eager to spend your money on crap that you don't need? If so, you're like me. I've recently been contemplating why it's so important to save money, not spend it. I've boiled it down to a few points.
 
 ## For Emergencies

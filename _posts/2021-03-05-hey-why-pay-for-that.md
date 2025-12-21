@@ -5,8 +5,6 @@ author: Matt Watson
 excerpt: "Within the first day of using HEY for You I paid for the full year. My family asked 'why pay for something you can get for free, let alone something that costs $100 per year?'"
 ---
 
-# HEY! Why Pay For That?
-
 Within the first day of using HEY for You I paid for the full year. My family asked "why pay for something you can get for free, let alone something that costs $100 per year?". Their point was valid, why would someone pay for something that they could get for free? I have a thought on the matter.
 
 ## The True Cost of "Free"

@@ -5,8 +5,6 @@ author: Matt Watson
 excerpt: "I love watches. I'm not talking about electronic watches. (Even though I own the Apple Watch) I'm talking about the mechanical kind."
 ---
 
-# Why Wear a Mechanical Watch Today?
-
 I love watches. I'm not talking about electronic watches. (Even though I own the Apple Watch) I'm talking about the mechanical kind. A question comes up for me when wearing one though. Why wear a mechanical watch in this day and age when electronic watches and our phones are so much more accurate?
 
 This is a question I've pondered many times, and I think I've arrived at some interesting answers.
