@@ -193,9 +193,13 @@ function buildBlog() {
     const content = fs.readFileSync(filePath, 'utf-8');
     const { frontmatter, content: bodyContent } = parseFrontmatter(content);
     
+    // Generate slug from filename (remove date prefix and .md extension)
+    const slug = file.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace('.md', '');
+    
     posts.push({
       ...frontmatter,
       filename: file,
+      slug: slug,
       content: bodyContent
     });
   });
