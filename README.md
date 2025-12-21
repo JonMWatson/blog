@@ -1,4 +1,4 @@
-# Personal Blog
+# Matt Watson's Blog
 
 A clean, fast personal blog built with vanilla HTML/CSS and Markdown. Inspired by Hey World's minimal design philosophy.
 
